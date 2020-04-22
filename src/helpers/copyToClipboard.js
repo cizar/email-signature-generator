@@ -1,3 +1,12 @@
+export const copyStringToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
+
 function copyToClipboard (element) {
   if (document.body.createTextRange) {
     let range = document.body.createTextRange();
