@@ -18,15 +18,15 @@ const Firma = React.forwardRef(({firstName, lastName, title, organization, workE
   const fullName = [firstName, lastName].join(' ').toUpperCase();
   const displayUrl = url.replace(/^https?:\/\//,'');
   return (
-    <table ref={ref} style={styles.table} cellPadding="7" cellSpacing="0">
+    <table ref={ref} style={styles.table} cellPadding="7" cellSpacing="0" width="100%">
       <tbody>
         <tr>
           {!!imageUrl && (
-            <td valign="top">
+            <td valign="top" width="1">
               <img src={imageUrl} alt={organization} border="0" width={imageWidth} height={imageHeight} style={{ width: imageWidth, height: imageHeight }} />
             </td>
           )}
-          <td valign="top" style={styles.cell}>
+          <td valign="top" style={styles.cell} width="100%">
             {!!fullName && <><strong>{fullName}</strong><br /></>}
             {!!title && <>{title}<br /></>}
             {!!workEmail && <><a href={`mailto:${workEmail}`}>{workEmail}</a><br /></>}
